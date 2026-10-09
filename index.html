@@ -44,7 +44,7 @@ header.hero{background:var(--brand);color:#fff;padding:40px 0 32px}
 .stat span{color:var(--muted);font-size:13px}
 section{margin:36px 0}
 h2{font-size:20px;margin:0 0 14px}
-.timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;list-style:none;padding:0;margin:0}
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;list-style:none;padding:0;margin:0}
 .timeline li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;position:relative}
 .timeline li.done{opacity:.7}
 .timeline .d{font-weight:700;color:var(--brand-2);font-size:14px}
@@ -62,7 +62,8 @@ h2{font-size:20px;margin:0 0 14px}
 .card summary{list-style:none;cursor:pointer;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:6px 16px}
 .card summary::-webkit-details-marker{display:none}
 .card h3{margin:0;font-size:16.5px;line-height:1.35}
-.meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:13.5px;grid-column:1}
+.meta{display:flex;gap:6px 14px;flex-wrap:wrap;color:var(--muted);font-size:13.5px;grid-column:1;overflow-wrap:anywhere}
+.meta a{text-decoration:none}
 .badge{grid-column:2;grid-row:1;align-self:start;font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
 .badge.open{color:var(--open);background:var(--open-bg)}
 .badge.filled{color:var(--filled);background:var(--filled-bg)}
@@ -80,7 +81,7 @@ details[open] .more .o{display:none} details:not([open]) .more .c{display:none}
 .btn-brand{background:var(--brand);color:#fff}
 :root[data-theme="dark"] .btn-brand{color:#0f141a}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn-brand{color:#0f141a}}
-.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:s}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px 14px 52px;position:relative}
 .step::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--brand-soft);color:var(--brand-2);font-weight:700;display:grid;place-items:center;font-size:14px}
 .step > b{display:block}
@@ -139,13 +140,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
   <section id="apply">
     <h2>How to apply</h2>
     <div class="steps">
-      <div class="step"><b>Pick up to three topics</b><span>Read the descriptions and check you meet the prerequisites. Only topics marked <em>Open</em> can be chosen.</span></div>
-      <div class="step"><b>Submit the registration form</b><span>Rank your preferred topics and upload your <b>CV</b> and current <b>transcript of records</b> (PDF), plus a few lines on your background and motivation.</span></div>
-      <div class="step"><b>Preliminary selection</b><span>We pre-select candidates per topic based on academic record, relevant skills and fit, and pass them to the supervisors.</span></div>
-      <div class="step"><b>Final allocation</b><span>Supervisors and Prof. Färber decide the final allocation. You'll hear from us by email, then complete the formal course registration.</span></div>
+      <div class="step"><b>Pick up to two topics</b><span>Read the descriptions and check you meet the prerequisites. Only topics marked <em>Open</em> can be chosen.</span></div>
+      <div class="step"><b>Submit the registration form</b><span>Choose your 1st preference (and optionally a 2nd), upload your <b>CV</b> and current <b>transcript of records</b> (PDF), plus a few lines on your background and motivation.</span></div>
+      <div class="step"><b>Final allocation</b><span>Supervisors and Prof. Färber decide the final allocation based on academic record, relevant skills and fit. You'll hear from us by email.</span></div>
     </div>
     <p class="applyrow"><a class="btn btn-brand js-form" href="#" target="_blank" rel="noopener">Open the registration form →</a></p>
-    <p class="note">Places are limited and some topics fill early. Questions about a specific topic? Ask at the kick-off or mention them in the form — please don't send applications to supervisors individually.</p>
+    <p class="note">Places are limited and some topics fill early. Questions about a specific topic? Email the supervisor or ask at the kick-off — but please submit your application only through the form.</p>
   </section>
 </main>
 
@@ -161,13 +161,12 @@ footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);f
 const CONFIG = {
   formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdSHEpbxjbcbOqz_QDY3mji-YVVYMshyCJxC0HlkzRqrzsNIg/viewform",
   updated: "9 October 2026",
-  deadline: "18 Oct",
+  deadline: "16 Oct",
   timeline: [
     { d: "Fri 9 Oct",    t: "Topics published",           s: "Initial list online", done: true },
     { d: "13 / 14 Oct",  t: "Joint kick-off",             s: "Topic pitches, process & expectations — date and room TBA" },
-    { d: "Sun 18 Oct",   t: "Application deadline",       s: "23:59 — form with CV, transcript & preferences" },
-    { d: "by 22 Oct",    t: "Preliminary selection",      s: "Shortlists sent to supervisors" },
-    { d: "by 26 Oct",    t: "Final allocation",           s: "Students notified, then formal registration" }
+    { d: "Fri 16 Oct",   t: "Application deadline",       s: "11:59 PM — form with CV, transcript & preferences" },
+    { d: "by 19 Oct",    t: "Final allocation",           s: "Students notified by email" }
   ]
 };
 /* ===================== */
@@ -193,7 +192,7 @@ function card(p) {
     <summary>
       <h3>${esc(p.title)}</h3>
       <span class="badge ${open ? "open" : "filled"}">${open ? "Open" : "Filled"}</span>
-      <div class="meta"><span>👤 ${esc(p.supervisor)}</span><span>👥 ${p.places} ${p.places > 1 ? "students" : "student"}</span></div>
+      <div class="meta"><span>👤 ${esc(p.supervisor)}</span>${p.email ? `<a href="mailto:${esc(p.email)}" onclick="event.stopPropagation()">✉️ ${esc(p.email)}</a>` : ""}<span>👥 ${p.places} ${p.places > 1 ? "students" : "student"}</span></div>
       <p class="teaser">${esc(p.description[0] || "")}</p>
       <span class="more"><span class="o">Show details ▾</span><span class="c">Hide details ▴</span></span>
     </summary>

@@ -3,6 +3,7 @@
     "id": "llm-routing",
     "title": "LLM Routing",
     "supervisor": "Subhendu Khatuya",
+    "email": "subhendu.khatuya@tu-dresden.de",
     "description": [
       "With the proliferation of Specialized Large Language Models (LLMs) varying in size, cost, and capability, dynamically directing user queries to the most suitable model is critical. This project focuses on developing/evaluating lightweight routing mechanisms (e.g., using small classifier models, embedding similarity, or performance predictors) to automatically route incoming prompts to the optimal LLM (e.g., smaller/faster model for simple queries vs. larger model for complex tasks). The goal is to maximize overall response quality while minimizing computational cost and response latency."
     ],
@@ -25,6 +26,7 @@
     "id": "mitigating-medium-novelty-bias-in-research-idea-judgment",
     "title": "Mitigating Medium-Novelty Bias in Research Idea Judgment",
     "supervisor": "Tobias Schreieder",
+    "email": "tobias.schreieder@tu-dresden.de",
     "description": [
       "Large language models (LLMs) can assess the novelty of research ideas, but existing approaches exhibit a systematic medium-novelty bias: predictions tend to concentrate on intermediate novelty scores, while very low- and high-novelty ideas are harder to identify. The RINoBench benchmark enables systematic evaluation of this behavior, while the recent Think-Probe-Respond (TPR) approach demonstrates that classifiers operating on internal LLM representations can mitigate this bias.",
       "This project investigates alternative classification approaches for mitigating medium-novelty bias in research idea judgment. Students will analyze relevant approaches for classification and judgment biases and investigate whether dedicated models or training strategies can improve the identification of low- and high-novelty research ideas. Possible approaches are not restricted to LLMs and may include encoder models, neural classifiers, or other suitable classification architectures."
@@ -53,6 +55,7 @@
     "id": "advanced-multimodal-learning-for-electronic-health-records-t",
     "title": "Advanced Multimodal Learning for Electronic Health Records: Toward Comprehensive and Interpretable Clinical Intelligence",
     "supervisor": "Zhan Qu",
+    "email": "zhan.qu@tu-dresden.de",
     "description": [
       "This thesis invites you to work at the intersection of machine learning, multimodal AI, and digital health. Electronic Health Records (EHRs) increasingly combine several data types: structured tabular data (diagnoses, procedures, lab values), unstructured clinical text (reports, summaries), medical images (e.g., X-rays), and clinical time series (vital signs, monitoring data). Most current models focus on a single modality – but real clinical understanding requires joint reasoning over all of them."
     ],
@@ -77,6 +80,7 @@
     "id": "weakly-supervised-citation-localization-in-scientific-full-t",
     "title": "Weakly Supervised Citation Localization in Scientific Full Texts",
     "supervisor": "Jingbo He",
+    "email": "jingbo.he@tu-dresden.de",
     "description": [
       "When a paper cites another work, it usually relies on one specific finding in the cited paper, but the citation graph only records that paper P cites paper B, not which passage of B is meant. Locating this passage is the first step towards checking whether cited sources actually support the claims made about them, a problem that has become pressing with LLM-assisted writing. Human-labelled data for this task is scarce, and current systems rely on generic retrieval. This project investigates whether the citation network itself can serve as training signal: unarXive provides millions of arXiv full texts with in-text citations linked to the cited papers, and papers that cite the same work for the same finding provide natural, if noisy, labels. Students will design a weak-supervision strategy for citation localization, train a retrieval model on it, and evaluate against standard baselines on existing annotated data. Suitable approaches include dense retrievers, rerankers, late-interaction models, and noise-aware training methods."
     ],
@@ -106,6 +110,7 @@
     "id": "phonetic-aware-letter-based-next-word-prediction-for-transli",
     "title": "Phonetic-Aware Letter-Based Next Word Prediction for Transliterated South Asian Languages",
     "supervisor": "A F M Mohimenul Joaa",
+    "email": "a_f_m_mohimenul.joaa@mailbox.tu-dresden.de",
     "description": [
       "Over a billion South Asian users type their languages in Latin script on English keyboards, but autocomplete serves them poorly: suggestions only appear once a word is complete, valid spelling variants are treated as different words, and code-mixed sentences confuse single-language models. This project builds a single on-device model for Hindi-, Urdu-, Bangla- and Tamil-English transliterated typing that predicts after every keystroke, uses phonetic matching (weighted edit distance over sound and consonant patterns) to treat spelling variants as equivalent, and ranks top-K suggestions by context. Lightweight text commands (e.g. ?fix, ?formal, ?shorten, ?translate) extend it beyond autocomplete."
     ],
@@ -122,6 +127,7 @@
     "id": "kgnode-v2-self-tuning-agentic-framework-for-universal-knowle",
     "title": "KGNode v2: Self-Tuning Agentic Framework for Universal Knowledge Graph Question Answering",
     "supervisor": "A F M Mohimenul Joaa",
+    "email": "a_f_m_mohimenul.joaa@mailbox.tu-dresden.de",
     "description": [
       "KGNode is a training-free knowledge-graph question answering pipeline evaluated on DBLP-QuAD and QALD-10. Version 2 turns it into a self-optimising agentic system: a LangGraph workflow with quality gates that stop early on poor intermediate results, DSPy-driven prompt optimisation for entity extraction, template generation and SPARQL synthesis, and automatic hyperparameter adaptation to the query and the KG. The system is packaged as an MCP server and evaluated against v1 on accuracy, runtime and cross-domain transfer, with ablations per component."
     ],
@@ -135,6 +141,7 @@
     "id": "babeldojo-do-prompt-injection-defenses-for-llm-agents-surviv",
     "title": "BabelDojo: Do Prompt-Injection Defenses for LLM Agents Survive Outside English?",
     "supervisor": "Himanshu Beniwal",
+    "email": "himanshubeniwal015@gmail.com",
     "description": [
       "Tool-using agents read emails, web pages and documents that an attacker can write. Instructions hidden in that data (indirect prompt injection) can hijack the agent into sending money or leaking files. Nearly every benchmark and defense has been tested only in English. You will extend the AgentDojo benchmark with injections in about 10 languages (high- to low-resource, plus code-switched and romanized text) and measure how attack success, task utility and defense performance change with the language of the attack."
     ],

@@ -9,6 +9,8 @@ import json, re, openpyxl, pathlib
 HERE = pathlib.Path(__file__).parent
 # Content for rows whose sheet cells say "same content as the old portal" or are empty.
 FALLBACK = json.loads((HERE / "fallback_content.json").read_text())
+# Supervisor name -> email shown on the page.
+EMAILS = json.loads((HERE / "supervisors.json").read_text())
 
 def bullets(text):
     if not text: return []
@@ -37,7 +39,7 @@ for r in rows[1:]:
     fb = FALLBACK.get(title, {})
     if not desc or desc.lower().startswith("same content"): desc = fb.get("description", "")
     p = {
-        "id": slug(title), "title": title, "supervisor": sup,
+        "id": slug(title), "title": title, "supervisor": sup, "email": EMAILS.get(sup, ""),
         "description": [x.strip() for x in desc.split("\n") if x.strip()],
         "deliverables": bullets(exp) or fb.get("deliverables", []),
         "prerequisites": bullets(pre) or fb.get("prerequisites", []),
